@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-int	if_acending(s_node *stack)
+int	if_acending(t_node *stack)
 {
-	s_node	*comp;
+	t_node	*comp;
 
 	comp = stack->next;
 	while (comp)

@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	s_nodecount(s_node *stack)
+int	t_nodecount(t_node *stack)
 {
 	int	i;
 
@@ -27,10 +27,10 @@ int	s_nodecount(s_node *stack)
 	return (i);
 }
 
-void	ra_b(s_node **stack, char c)
+void	ra_b(t_node **stack, char c)
 {
-	s_node	*tmp;
-	s_node	*to_end;
+	t_node	*tmp;
+	t_node	*to_end;
 
 	to_end = *stack;
 	tmp = (*stack)->next;
@@ -45,10 +45,10 @@ void	ra_b(s_node **stack, char c)
 		write(1, "rb\n", 3);
 }
 
-s_node	*rra_b(s_node *stack, char c)
+t_node	*rra_b(t_node *stack, char c)
 {
-	s_node	*to_first;
-	s_node	*pre;
+	t_node	*to_first;
+	t_node	*pre;
 
 	to_first = stack;
 	while (to_first->next)
@@ -65,9 +65,9 @@ s_node	*rra_b(s_node *stack, char c)
 	return (to_first);
 }
 
-s_node	*sa_b(s_node *stack, char c)
+t_node	*sa_b(t_node *stack, char c)
 {
-	s_node	*second;
+	t_node	*second;
 	int		i;
 
 	i = 1;
@@ -83,10 +83,10 @@ s_node	*sa_b(s_node *stack, char c)
 	return (second);
 }
 
-void	pa_b(s_node **source_stack, s_node **tostack, char c)
+void	pa_b(t_node **source_stack, t_node **tostack, char c)
 {
-	s_node	*tmp;
-	s_node	*prev;
+	t_node	*tmp;
+	t_node	*prev;
 
 	prev = *source_stack;
 	tmp = (*source_stack)->next;

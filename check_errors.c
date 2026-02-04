@@ -94,9 +94,9 @@ int	check_errors(int argc, char **argv)
 	return (1);
 }
 
-int	is_repetition(s_node *stack)
+int	is_repetition(t_node *stack)
 {
-	s_node	*first;
+	t_node	*first;
 	int		data;
 
 	while (stack)

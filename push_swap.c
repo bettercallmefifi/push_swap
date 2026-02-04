@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-void	ft_clear(s_node **stack)
+void	ft_clear(t_node **stack)
 {
-	s_node	*tmp;
+	t_node	*tmp;
 
 	while (*stack)
 	{
@@ -25,7 +25,7 @@ void	ft_clear(s_node **stack)
 	}
 }
 
-void	fill_stack_a(s_node **s_a, int argc, char **argv)
+void	fill_stack_a(t_node **s_a, int argc, char **argv)
 {
 	char	**numstr;
 	int		i;
@@ -54,14 +54,14 @@ void	fill_stack_a(s_node **s_a, int argc, char **argv)
 	}
 }
 
-void	let_sort(s_node **stack_a)
+void	let_sort(t_node **stack_a)
 {
-	s_node	*stack_b;
+	t_node	*stack_b;
 
 	stack_b = NULL;
-	if (s_nodecount(*stack_a) == 3)
+	if (t_nodecount(*stack_a) == 3)
 		sort_3(stack_a);
-	else if (s_nodecount(*stack_a) == 5)
+	else if (t_nodecount(*stack_a) == 5)
 		sort_5(stack_a, &stack_b);
 	else
 	{
@@ -72,7 +72,7 @@ void	let_sort(s_node **stack_a)
 
 int	main(int argc, char **argv)
 {
-	s_node	*stack_a;
+	t_node	*stack_a;
 
 	stack_a = NULL;
 	if (argc < 2)

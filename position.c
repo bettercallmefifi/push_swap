@@ -12,12 +12,12 @@
 
 #include "push_swap.h"
 
-int	high_ranked(s_node *stack)
+int	high_ranked(t_node *stack)
 {
 	int	count;
 	int	i;
 	int	high;
-	
+
 	i = 1;
 	count = 1;
 	high = stack->value;
@@ -34,7 +34,7 @@ int	high_ranked(s_node *stack)
 	return (count);
 }
 
-int	low_ranked(s_node *stack)
+int	low_ranked(t_node *stack)
 {
 	int	i;
 	int	count;
@@ -56,12 +56,12 @@ int	low_ranked(s_node *stack)
 	return (count);
 }
 
-int	*to_array(s_node *stack_a)
+int	*to_array(t_node *stack_a)
 {
 	int	*arr;
 	int	i;
 
-	arr = malloc(s_nodecount(stack_a) * sizeof(stack_a));
+	arr = malloc(t_nodecount(stack_a) * sizeof(stack_a));
 	i = 0;
 	while (stack_a)
 	{
@@ -72,7 +72,7 @@ int	*to_array(s_node *stack_a)
 	return (arr);
 }
 
-int	*arr_stored(int n, s_node *stack)
+int	*arr_stored(int n, t_node *stack)
 {
 	int	*arr;
 	int	tmp;
@@ -99,13 +99,13 @@ int	*arr_stored(int n, s_node *stack)
 	return (arr);
 }
 
-void	fill_rank(s_node *stack)
+void	fill_rank(t_node *stack)
 {
 	int	*arr;
 	int	i;
 	int	count;
 
-	count = s_nodecount(stack);
+	count = t_nodecount(stack);
 	arr = arr_stored(count, stack);
 	while (stack)
 	{

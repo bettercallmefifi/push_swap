@@ -12,11 +12,11 @@
 
 #include "push_swap.h"
 
-s_node	*ft_lstnew(int value)
+t_node	*ft_lstnew(int value)
 {
-	s_node	*begin;
+	t_node	*begin;
 
-	begin = (s_node *)malloc(sizeof(s_node));
+	begin = (t_node *)malloc(sizeof(t_node));
 	if (!begin)
 		return (NULL);
 	begin->value = value;
@@ -24,9 +24,9 @@ s_node	*ft_lstnew(int value)
 	return (begin);
 }
 
-void	ft_lstadd_back(s_node *lst, s_node *new)
+void	ft_lstadd_back(t_node *lst, t_node *new)
 {
-	s_node	*end;
+	t_node	*end;
 
 	end = lst;
 	if (lst == NULL)
@@ -43,7 +43,7 @@ void	ft_lstadd_back(s_node *lst, s_node *new)
 	new->next = NULL;
 }
 
-void	ft_lstadd_front(s_node **lst, s_node *new)
+void	ft_lstadd_front(t_node **lst, t_node *new)
 {
 	if (lst && new)
 	{

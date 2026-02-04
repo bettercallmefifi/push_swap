@@ -28,13 +28,13 @@ int	range(int check, int i, int current_range)
 		return (1);
 }
 
-void	to_stack_b(s_node **stack_a, s_node **stack_b)
+void	to_stack_b(t_node **stack_a, t_node **stack_b)
 {
 	int	i;
 	int	check;
 
 	fill_rank(*stack_a);
-	if (s_nodecount(*stack_a) >= 500)
+	if (t_nodecount(*stack_a) >= 500)
 		check = 1;
 	else
 		check = 0;
@@ -57,14 +57,14 @@ void	to_stack_b(s_node **stack_a, s_node **stack_b)
 	}
 }
 
-void	to_stack_a(s_node **stack_a, s_node **stack_b)
+void	to_stack_a(t_node **stack_a, t_node **stack_b)
 {
 	int	rank;
-	
-	while (s_nodecount(*stack_b))
+
+	while (t_nodecount(*stack_b))
 	{
 		rank = high_ranked(*stack_b);
-		if (rank == 1 || rank <= s_nodecount(*stack_b) / 2)
+		if (rank == 1 || rank <= t_nodecount(*stack_b) / 2)
 		{
 			while (rank-- > 1)
 				ra_b(stack_b, 'b');
@@ -72,14 +72,14 @@ void	to_stack_a(s_node **stack_a, s_node **stack_b)
 		}
 		else
 		{
-			while (rank++ <= s_nodecount(*stack_b))
+			while (rank++ <= t_nodecount(*stack_b))
 				*stack_b = rra_b(*stack_b, 'b');
 			pa_b(stack_b, stack_a, 'a');
 		}
 	}
 }
 
-void	sort_3(s_node **stack_a)
+void	sort_3(t_node **stack_a)
 {
 	while (!if_acending(*stack_a))
 	{
@@ -94,7 +94,7 @@ void	sort_3(s_node **stack_a)
 	}
 }
 
-void	sort_5(s_node **stack_a, s_node **stack_b)
+void	sort_5(t_node **stack_a, t_node **stack_b)
 {
 	int	rank;
 	int	i;
@@ -113,7 +113,7 @@ void	sort_5(s_node **stack_a, s_node **stack_b)
 		}
 		else
 		{
-			while (i++ <= s_nodecount(*stack_a))
+			while (i++ <= t_nodecount(*stack_a))
 				*stack_a = rra_b(*stack_a, 'a');
 			pa_b(stack_a, stack_b, 'b');
 		}
